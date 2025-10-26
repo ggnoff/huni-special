@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Kantumruy Pro', sans-serif;
+  background-color: #000;
+}
+
+/* ---- Container ---- */
+.menu-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ---- Scroll ---- */
+.menu-scroll {
+  display: flex;
+  overflow-x: scroll;
+  height: 100%;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ---- Each full-screen page ---- */
+.menu-item {
+  flex: 0 0 100%;
+  height: 100vh;
+  scroll-snap-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #000;
+  position: relative;
+  opacity: 1;                          /* full brightness */
+  transform: scale(1);                 /* no shrink */
+  transition: transform 0.8s ease;     /* smooth if you still want zoom */
+}
+
+.menu-item:focus,
+.menu-item:hover,
+.menu-item:target {
+  opacity: 1;                          /* stays the same */
+  transform: scale(1);                 
+}
+
+
+/* ---- Overlay Text ---- */
+.overlay {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translate(-50%, 30px);
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+
+.overlay h2 {
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.5px;
+}
+
+.overlay p {
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+/* ---- Soft fade + slide animation ---- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 30px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Optional: scrollbar hidden */
+.menu-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-item:focus .overlay,
+.menu-item:hover .overlay,
+.menu-item:target .overlay {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+
+
+
