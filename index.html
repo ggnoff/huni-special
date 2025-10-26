@@ -72,12 +72,13 @@ const observer = new IntersectionObserver(entries => {
       overlay.classList.remove('animate');
     }
   });
-}, { threshold: 0.6 }); // 60% visible to trigger
+}, { threshold: 0.4 });
 
 document.querySelectorAll('.menu-item').forEach(item => {
   observer.observe(item);
 });
 </script>
+
 </body>
 </html>
 
