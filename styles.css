@@ -60,7 +60,7 @@ html, body {
 }
 .overlay {
   position: absolute;
-  bottom: 8%;
+  bottom: 18%;
   left: 50%;
   transform: translate(-50%, 30px);
   text-align: center;
@@ -73,7 +73,7 @@ html, body {
 
 @media (max-width: 768px) {
   .overlay {
-    bottom: 18%; /* move the text higher for mobile */
+    bottom: 22%; /* move the text higher for mobile */
   }
 }
 
