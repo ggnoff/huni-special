@@ -58,6 +58,25 @@ html, body {
   transition: all 0.8s ease;
   z-index: 5;
 }
+.overlay {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translate(-50%, 30px);
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: all 0.8s ease;
+  z-index: 5;
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    bottom: 18%; /* move the text higher for mobile */
+  }
+}
+
 
 .overlay h2 {
   font-size: 2rem;
