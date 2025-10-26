@@ -62,7 +62,22 @@
 
     </div>
   </div>
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const overlay = entry.target.querySelector('.overlay');
+    if (entry.isIntersecting) {
+      overlay.classList.add('animate');
+    } else {
+      overlay.classList.remove('animate');
+    }
+  });
+}, { threshold: 0.6 }); // 60% visible to trigger
 
+document.querySelectorAll('.menu-item').forEach(item => {
+  observer.observe(item);
+});
+</script>
 </body>
 </html>
 
