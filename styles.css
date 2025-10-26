@@ -102,6 +102,23 @@ html, body {
   opacity: 1;
 }
 
+.overlay {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translate(-50%, 30px);
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.overlay.animate {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
 
 
 
